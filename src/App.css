@@ -1,7 +1,15 @@
 .App {
   text-align: center;
+  font-family:'Times New Roman', Times, serif;
+  overflow: hidden;
 }
-
+.container{
+  width: 1140px;
+padding-right: 15px;
+padding-left: 15px;
+margin-right: auto;
+margin-left: auto;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

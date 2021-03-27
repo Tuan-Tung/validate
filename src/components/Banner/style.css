@@ -1,0 +1,31 @@
+.banner{
+    width: 100%;
+    margin-top: 2rem;
+}
+p,h1{
+    margin: .7rem 0;
+}
+
+.banner__content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.banner__left{
+    text-align: start;
+}
+.banner__button{
+    width: 6rem;
+    height: 2.5rem;
+    background-color: #666;
+    border: 1px solid #666;
+    color: aliceblue;
+    outline: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.banner__button:hover{
+    background-color: #ffffff;
+    color: #666;
+}

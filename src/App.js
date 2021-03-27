@@ -1,24 +1,47 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router,Route, Switch } from 'react-router-dom'
 import './App.css';
+import Header from './components/Header';
+import router from './routers';
+
+
+const menu = [
+  {
+    lable: "Trang chủ",
+    to: "/",
+    exact:true
+  },
+  {
+    lable: "Giới thiệu",
+    to: "/about",
+    exact:false
+  },
+  {
+    lable: "Sản phẩm đã mua",
+    to: "/products",
+    exact:false
+  }
+]
+const showContent = (router) =>{
+  let result = null
+     result = router.map((value,index) =>{
+       return (
+         <Route key={index} path={value.path} exact={value.exact} component={value.main} />
+       )
+     })
+     return result;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header menu={menu}/>
+        <Switch>
+          {showContent(router)}
+        </Switch>
+      </div>
+    </Router>
+
   );
 }
 
